@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Code Quiz</title>
+        <link rel="stylesheet" href="./Assets/CSS/reset.css">
+        <link rel="stylesheet" href="./Assets/CSS/style.css">
+
+         <!-- Sets viewport scaling to be consistent across devices -->
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+         <!-- Sets favicon -->
+        <link rel="shortcut icon" type="image/svg+xml" href="./Assets/Images/96px-pencil.svg">
+    </head>
+
+    <body>
+        <nav>
+            <button id="nav-scores">High Scores</button>
+        </nav>
+        
+        <!-- Initial Welcome Message -->
+        <section id="welcome">
+            <h1>Welcome to the Code Challenge</h1>
+            <p>See how quickly you can prove your JavaScript prowess. Attempt to answer all questions before time expires. Each wrong question means less time to finish!</p>
+            <button id="start-button">Test Your Knowledge</button>
+        </section>
+
+        <!-- Question screen -->
+        <section id="question" class="hide">
+            <div class="grid">
+                <!-- Timer display -->
+                <h3 id="timer">Timer: 60</h3>
+                <!-- Question # updated as answers are populated -->
+                <h2>Question #</h2>
+            </div>
+            <p>Question text</p>
+            <!-- Answers appended into existing list items as spans -->
+            <ul>
+                <li>A) <span></span></li>
+                <li>B) <span></span></li>
+                <li>C) <span></span></li>
+                <li>D) <span></span></li>
+            </ul>
+            <h3 id="correct"><em></em></h3>
+        </section>
+
+        <!-- Times up screen -->
+        <section id="times-up" class="hide">
+            <h2>Time's up!</h2>
+        </section>
+        
+        <!-- Finishing screen -->
+        <section id="finish" class="hide">
+            <h2>Finished!</h2>
+            <p>Your final score:</p>
+            <!-- Empty list to host score stats populated from tally object -->
+            <uL>
+
+            </uL>
+            <p>Enter your initials to save your score for posterity.</p>
+            <form>
+                <label for="initials">Your Initials</label>
+                <input type="text" minlength="2" maxlength="3" name="initials" required>
+                <button type="submit">Save Score</button>
+            </form>
+        </section>
+
+        <!-- Score screen -->
+        <section id="scores" class="hide">
+            <h2>
+                High Scores
+            </h2>
+            <!-- List to host scores populated from localStorage -->
+            <ul>
+
+            </ul>
+            <div class="grid">
+                <button id="play-again">Go Back</button>
+                <button id="clear-scores">Clear High Scores</button>
+            </div>
+        </section>
+
+        <script src="./Assets/JS/script.js"></script>
+    </body>
+</html>
